@@ -19,10 +19,22 @@
 
 <div align="center">
 
-> **Note**: Screenshots coming soon! Visit the [live demo](https://sustainable-shopping-assistant-kppg8woi9.vercel.app) to see the app in action.
+### 🚀 [Try Live Demo](https://sustainable-shopping-assistant-kppg8woi9.vercel.app)
+
+> **Experience the app in action!** The live demo showcases all features including barcode scanning, sustainability scoring, progress tracking, and more.
+
+### Quick Preview
+
+| Home Screen | Scanner | Product Details | Progress |
+|------------|---------|-----------------|----------|
+| Browse eco-friendly products | Scan barcodes instantly | View sustainability scores | Track your impact |
 
 <!-- 
-Uncomment and add your screenshots here:
+To add screenshots:
+1. Visit the live app and capture screenshots using browser DevTools (F12 → Device Toolbar → Ctrl+Shift+P → "Capture screenshot")
+2. Create a `screenshots/` folder
+3. Save images as: home.png, scanner.png, product-detail.png, history.png, progress.png, profile.png
+4. Uncomment the code below and replace with your images
 
 ### Home Page
 ![Home Page](./screenshots/home.png)
@@ -33,11 +45,17 @@ Uncomment and add your screenshots here:
 ### Product Details
 ![Product Detail](./screenshots/product-detail.png)
 
+### Scan History
+![History](./screenshots/history.png)
+
 ### Progress Dashboard
 ![Progress](./screenshots/progress.png)
+
+### User Profile
+![Profile](./screenshots/profile.png)
 -->
 
-**Try the live demo:** [sustainable-shopping-assistant-kppg8woi9.vercel.app](https://sustainable-shopping-assistant-kppg8woi9.vercel.app)
+**📖 See [SCREENSHOTS_GUIDE.md](./SCREENSHOTS_GUIDE.md) for detailed instructions on capturing and adding screenshots.**
 
 </div>
 
