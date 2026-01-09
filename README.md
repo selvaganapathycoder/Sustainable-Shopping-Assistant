@@ -23,39 +23,46 @@
 
 > **Experience the app in action!** The live demo showcases all features including barcode scanning, sustainability scoring, progress tracking, and more.
 
-### Quick Preview
+### App Preview
 
-| Home Screen | Scanner | Product Details | Progress |
-|------------|---------|-----------------|----------|
-| Browse eco-friendly products | Scan barcodes instantly | View sustainability scores | Track your impact |
+<table>
+<tr>
+<td align="center" width="33%">
+<img src="https://via.placeholder.com/300x600/16a34a/ffffff?text=Home+Page%0A%0ABrowse+Products%0A%0AView+Sustainability+Scores" alt="Home Page" width="250"/>
+<br/><b>Home Page</b>
+<br/>Browse eco-friendly products
+</td>
+<td align="center" width="33%">
+<img src="https://via.placeholder.com/300x600/22c55e/ffffff?text=Barcode+Scanner%0A%0AScan+Products%0A%0AInstant+Analysis" alt="Scanner" width="250"/>
+<br/><b>Barcode Scanner</b>
+<br/>Scan products instantly
+</td>
+<td align="center" width="33%">
+<img src="https://via.placeholder.com/300x600/16a34a/ffffff?text=Product+Details%0A%0ASustainability+Score%0A%0AEco+Alternatives" alt="Product Details" width="250"/>
+<br/><b>Product Details</b>
+<br/>View sustainability scores
+</td>
+</tr>
+<tr>
+<td align="center" width="33%">
+<img src="https://via.placeholder.com/300x600/22c55e/ffffff?text=Scan+History%0A%0ATrack+Products%0A%0AView+Past+Scans" alt="History" width="250"/>
+<br/><b>Scan History</b>
+<br/>Track all scanned products
+</td>
+<td align="center" width="33%">
+<img src="https://via.placeholder.com/300x600/16a34a/ffffff?text=Progress+Dashboard%0A%0AEarn+Badges%0A%0ATrack+Impact" alt="Progress" width="250"/>
+<br/><b>Progress Dashboard</b>
+<br/>Track your environmental impact
+</td>
+<td align="center" width="33%">
+<img src="https://via.placeholder.com/300x600/22c55e/ffffff?text=User+Profile%0A%0APersonal+Goals%0A%0AAchievements" alt="Profile" width="250"/>
+<br/><b>User Profile</b>
+<br/>Manage preferences & goals
+</td>
+</tr>
+</table>
 
-<!-- 
-To add screenshots:
-1. Visit the live app and capture screenshots using browser DevTools (F12 → Device Toolbar → Ctrl+Shift+P → "Capture screenshot")
-2. Create a `screenshots/` folder
-3. Save images as: home.png, scanner.png, product-detail.png, history.png, progress.png, profile.png
-4. Uncomment the code below and replace with your images
-
-### Home Page
-![Home Page](./screenshots/home.png)
-
-### Barcode Scanner  
-![Scanner](./screenshots/scanner.png)
-
-### Product Details
-![Product Detail](./screenshots/product-detail.png)
-
-### Scan History
-![History](./screenshots/history.png)
-
-### Progress Dashboard
-![Progress](./screenshots/progress.png)
-
-### User Profile
-![Profile](./screenshots/profile.png)
--->
-
-**📖 See [SCREENSHOTS_GUIDE.md](./SCREENSHOTS_GUIDE.md) for detailed instructions on capturing and adding screenshots.**
+> 💡 **Note**: These are placeholder images. For actual screenshots, visit the [live demo](https://sustainable-shopping-assistant-kppg8woi9.vercel.app) or see [SCREENSHOTS_GUIDE.md](./SCREENSHOTS_GUIDE.md) for instructions on adding real screenshots.
 
 </div>
 
