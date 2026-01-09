@@ -28,41 +28,39 @@
 <table>
 <tr>
 <td align="center" width="33%">
-<img src="https://via.placeholder.com/300x600/16a34a/ffffff?text=Home+Page%0A%0ABrowse+Products%0A%0AView+Sustainability+Scores" alt="Home Page" width="250"/>
+<img src="./screenshots/home.png" alt="Home Page" width="250"/>
 <br/><b>Home Page</b>
 <br/>Browse eco-friendly products
 </td>
 <td align="center" width="33%">
-<img src="https://via.placeholder.com/300x600/22c55e/ffffff?text=Barcode+Scanner%0A%0AScan+Products%0A%0AInstant+Analysis" alt="Scanner" width="250"/>
+<img src="./screenshots/scanner.png" alt="Scanner" width="250"/>
 <br/><b>Barcode Scanner</b>
 <br/>Scan products instantly
 </td>
 <td align="center" width="33%">
-<img src="https://via.placeholder.com/300x600/16a34a/ffffff?text=Product+Details%0A%0ASustainability+Score%0A%0AEco+Alternatives" alt="Product Details" width="250"/>
+<img src="./screenshots/product-detail.png" alt="Product Details" width="250"/>
 <br/><b>Product Details</b>
 <br/>View sustainability scores
 </td>
 </tr>
 <tr>
 <td align="center" width="33%">
-<img src="https://via.placeholder.com/300x600/22c55e/ffffff?text=Scan+History%0A%0ATrack+Products%0A%0AView+Past+Scans" alt="History" width="250"/>
+<img src="./screenshots/history.png" alt="History" width="250"/>
 <br/><b>Scan History</b>
 <br/>Track all scanned products
 </td>
 <td align="center" width="33%">
-<img src="https://via.placeholder.com/300x600/16a34a/ffffff?text=Progress+Dashboard%0A%0AEarn+Badges%0A%0ATrack+Impact" alt="Progress" width="250"/>
+<img src="./screenshots/progress.png" alt="Progress" width="250"/>
 <br/><b>Progress Dashboard</b>
 <br/>Track your environmental impact
 </td>
 <td align="center" width="33%">
-<img src="https://via.placeholder.com/300x600/22c55e/ffffff?text=User+Profile%0A%0APersonal+Goals%0A%0AAchievements" alt="Profile" width="250"/>
+<img src="./screenshots/profile.png" alt="Profile" width="250"/>
 <br/><b>User Profile</b>
 <br/>Manage preferences & goals
 </td>
 </tr>
 </table>
-
-> 💡 **Note**: These are placeholder images. For actual screenshots, visit the [live demo](https://sustainable-shopping-assistant-kppg8woi9.vercel.app) or see [SCREENSHOTS_GUIDE.md](./SCREENSHOTS_GUIDE.md) for instructions on adding real screenshots.
 
 </div>
 
