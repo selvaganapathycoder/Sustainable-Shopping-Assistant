@@ -15,6 +15,34 @@
 
 ---
 
+## 📱 Screenshots
+
+<div align="center">
+
+> **Note**: Screenshots coming soon! Visit the [live demo](https://sustainable-shopping-assistant-kppg8woi9.vercel.app) to see the app in action.
+
+<!-- 
+Uncomment and add your screenshots here:
+
+### Home Page
+![Home Page](./screenshots/home.png)
+
+### Barcode Scanner  
+![Scanner](./screenshots/scanner.png)
+
+### Product Details
+![Product Detail](./screenshots/product-detail.png)
+
+### Progress Dashboard
+![Progress](./screenshots/progress.png)
+-->
+
+**Try the live demo:** [sustainable-shopping-assistant-kppg8woi9.vercel.app](https://sustainable-shopping-assistant-kppg8woi9.vercel.app)
+
+</div>
+
+---
+
 ## 📖 Overview
 
 EcoScan is a comprehensive sustainability tracking application that empowers consumers to make environmentally conscious purchasing decisions. By scanning product barcodes, users can instantly access sustainability scores, eco-friendly alternatives, and track their positive environmental impact over time.
