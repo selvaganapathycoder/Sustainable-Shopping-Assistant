@@ -1,0 +1,24 @@
+<svg
+  width="320"
+  height="80"
+  viewBox="0 0 320 80"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <text
+    x="10"
+    y="55"
+    font-family="Poppins, Inter, Arial, sans-serif"
+    font-size="48"
+    font-weight="600"
+    fill="#16a34a"
+    letter-spacing="1"
+  >
+    ecoscan
+  </text>
+
+  <!-- Leaf accent -->
+  <path
+    d="M255 28 C270 10, 300 15, 290 40 C280 65, 250 60, 255 28 Z"
+    fill="#22c55e"
+  />
+</svg>

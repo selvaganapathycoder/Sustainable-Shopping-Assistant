@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2ECC71;
+  --color-secondary: #27AE60;
+  --color-accent: #F1C40F;
+  --color-background: #F9FAF7;
+  --color-text: #1F2937;
+
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+:root {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom utility for legacy support if needed, though Tailwind 4 handles --shadow-card */
+.card-shadow {
+  box-shadow: var(--shadow-card);
+}
