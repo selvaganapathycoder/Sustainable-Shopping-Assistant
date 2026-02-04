@@ -307,7 +307,7 @@ The application includes a comprehensive mock database with:
 - [ ] **Advanced Analytics** - Detailed sustainability insights
 - [ ] **Offline Mode** - PWA with service workers
 - [ ] **Multi-language Support** - i18n implementation
-- [ ] **Dark Mode** - Theme switching capability
+- [x] **Dark Mode** - Theme switching capability
 - [ ] **Export Reports** - PDF sustainability reports
 
 ---
