@@ -9,19 +9,19 @@ const slides = [
     icon: Scan,
     title: "Scan products instantly",
     description: "Simply point your camera at any product barcode to see its environmental impact.",
-    color: "bg-green-100 text-green-600"
+    color: "bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400"
   },
   {
     icon: ShieldCheck,
     title: "Understand eco impact",
     description: "Get detailed insights into carbon footprint, plastic usage, and ethical sourcing.",
-    color: "bg-blue-100 text-blue-600"
+    color: "bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400"
   },
   {
     icon: Leaf,
     title: "Choose greener alternatives",
     description: "Discover better products for the planet and track your sustainability journey.",
-    color: "bg-yellow-100 text-yellow-600"
+    color: "bg-yellow-100 text-yellow-600 dark:bg-yellow-900/30 dark:text-yellow-400"
   }
 ];
 
@@ -53,10 +53,10 @@ const Onboarding: React.FC = () => {
             <div className={`w-32 h-32 rounded-3xl ${slides[current].color} flex items-center justify-center mb-8 shadow-xl`}>
               {React.createElement(slides[current].icon, { size: 48 })}
             </div>
-            <h2 className="text-3xl font-extrabold text-text mb-4">
+            <h2 className="text-3xl font-extrabold text-text dark:text-white mb-4">
               {slides[current].title}
             </h2>
-            <p className="text-gray-500 line-clamp-3 text-lg leading-relaxed">
+            <p className="text-gray-500 dark:text-gray-400 line-clamp-3 text-lg leading-relaxed">
               {slides[current].description}
             </p>
           </motion.div>
@@ -68,7 +68,7 @@ const Onboarding: React.FC = () => {
           {slides.map((_, i) => (
             <div
               key={i}
-              className={`h-1.5 transition-all duration-300 rounded-full ${i === current ? 'w-8 bg-primary' : 'w-2 bg-gray-200'}`}
+              className={`h-1.5 transition-all duration-300 rounded-full ${i === current ? 'w-8 bg-primary' : 'w-2 bg-gray-200 dark:bg-gray-700'}`}
             />
           ))}
         </div>

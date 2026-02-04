@@ -20,7 +20,7 @@ function AppContent() {
   }, [location]);
 
   return (
-    <div className={`min-h-screen bg-background text-text ${!hideNav ? 'pb-24' : ''}`}>
+    <div className={`min-h-screen bg-background dark:bg-gray-900 text-text dark:text-white transition-colors ${!hideNav ? 'pb-24' : ''}`}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/onboarding" element={<Onboarding />} />

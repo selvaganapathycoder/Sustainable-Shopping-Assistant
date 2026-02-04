@@ -23,7 +23,7 @@ const Card: React.FC<CardProps> = ({
     <div 
       onClick={onClick}
       className={cn(
-        'bg-white rounded-2xl card-shadow overflow-hidden transition-all duration-300',
+        'bg-white dark:bg-gray-800 dark:border dark:border-gray-700 rounded-2xl card-shadow overflow-hidden transition-all duration-300',
         onClick && 'cursor-pointer active:scale-[0.98]',
         padded && 'p-4',
         className

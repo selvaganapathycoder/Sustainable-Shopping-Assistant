@@ -31,26 +31,26 @@ const Progress: React.FC = () => {
 
       <section className="mb-8">
         <div className="grid grid-cols-2 gap-4">
-          <Card className="bg-primary/5 border-2 border-primary/10">
+          <Card className="bg-primary/5 dark:bg-primary/10 border-2 border-primary/10 dark:border-primary/20">
             <div className="flex items-center gap-2 text-primary mb-1">
               <Flame size={18} />
               <span className="text-xs font-bold uppercase">Streak</span>
             </div>
-            <p className="text-2xl font-black">7 Days</p>
+            <p className="text-2xl font-black dark:text-white">7 Days</p>
           </Card>
-          <Card className="bg-blue-50 border-2 border-blue-100">
-            <div className="flex items-center gap-2 text-blue-500 mb-1">
+          <Card className="bg-blue-50 dark:bg-blue-900/20 border-2 border-blue-100 dark:border-blue-900/30">
+            <div className="flex items-center gap-2 text-blue-500 dark:text-blue-400 mb-1">
               <Target size={18} />
               <span className="text-xs font-bold uppercase">Daily Goal</span>
             </div>
-            <p className="text-2xl font-black">85%</p>
+            <p className="text-2xl font-black dark:text-white">85%</p>
           </Card>
         </div>
       </section>
 
       <section className="mb-8">
-        <h3 className="text-lg font-bold mb-4 px-2">Eco Points Trend</h3>
-        <Card className="h-64 p-2">
+        <h3 className="text-lg font-bold mb-4 px-2 dark:text-white">Eco Points Trend</h3>
+        <Card className="h-64 p-2 dark:bg-gray-800">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={data}>
               <defs>
@@ -59,7 +59,7 @@ const Progress: React.FC = () => {
                   <stop offset="95%" stopColor="#2ECC71" stopOpacity={0}/>
                 </linearGradient>
               </defs>
-              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
+              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" className="dark:stroke-gray-700" />
               <XAxis 
                 dataKey="name" 
                 axisLine={false} 
@@ -87,7 +87,7 @@ const Progress: React.FC = () => {
 
       <section className="mb-8">
         <div className="flex justify-between items-center mb-4 px-2">
-          <h3 className="text-lg font-bold">Earned Badges</h3>
+          <h3 className="text-lg font-bold dark:text-white">Earned Badges</h3>
           <span className="text-xs font-bold text-primary">View All</span>
         </div>
         <div className="grid grid-cols-3 gap-4">
@@ -98,16 +98,16 @@ const Progress: React.FC = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Card className={`flex flex-col items-center p-4 text-center ${!badge.unlocked ? 'opacity-40 grayscale' : ''}`}>
-                <div className={`w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-2xl mb-2`}>
+                <div className={`w-12 h-12 rounded-full bg-gray-50 dark:bg-gray-700 flex items-center justify-center text-2xl mb-2`}>
                   {badge.level}
                 </div>
-                <p className="text-[10px] font-bold text-text mb-1">{badge.title}</p>
+                <p className="text-[10px] font-bold text-text dark:text-white mb-1">{badge.title}</p>
                 {badge.unlocked ? (
                   <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
                     <TrendingUp size={10} className="text-white" />
                   </div>
                 ) : (
-                  <div className="w-4 h-4 bg-gray-200 rounded-full" />
+                  <div className="w-4 h-4 bg-gray-200 dark:bg-gray-600 rounded-full" />
                 )}
               </Card>
             </motion.div>
@@ -115,7 +115,7 @@ const Progress: React.FC = () => {
         </div>
       </section>
 
-      <Card className="bg-zinc-900 text-white p-6 rounded-[2rem]">
+      <Card className="bg-zinc-900 dark:bg-black text-white p-6 rounded-[2rem]">
         <h4 className="font-bold mb-2">Did you know?</h4>
         <p className="text-sm text-gray-400 leading-relaxed">
           Switching to a bamboo toothbrush saves approximately 4 plastic toothbrushes from the ocean every year. Keep scanning!

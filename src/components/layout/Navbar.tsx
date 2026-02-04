@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 px-4 py-2 z-50 shadow-[0_-4px_10px_rgba(0,0,0,0.03)]">
+    <nav className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700 px-4 py-2 z-50 shadow-[0_-4px_10px_rgba(0,0,0,0.03)] dark:shadow-[0_-4px_10px_rgba(0,0,0,0.3)]">
       <div className="max-w-md mx-auto flex justify-between items-end">
         {navItems.map((item) => (
           <NavLink
@@ -21,11 +21,11 @@ const Navbar: React.FC = () => {
             className={({ isActive }) => `
               flex flex-col items-center justify-center transition-all duration-300
               ${item.primary ? '-mt-8' : ''}
-              ${isActive && !item.primary ? 'text-primary' : 'text-gray-400'}
+              ${isActive && !item.primary ? 'text-primary' : 'text-gray-400 dark:text-gray-500'}
             `}
           >
             {item.primary ? (
-              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-green-200 border-4 border-white mb-1 active:scale-95 transition-transform">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg shadow-green-200 dark:shadow-green-900/50 border-4 border-white dark:border-gray-800 mb-1 active:scale-95 transition-transform">
                 <item.icon className="text-white w-8 h-8" />
               </div>
             ) : (

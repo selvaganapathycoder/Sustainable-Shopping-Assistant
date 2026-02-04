@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import type { Scan } from '../types';
+import type { Scan, UserPreferences } from '../types';
 import { AppContext } from './AppContextCore';
 import { logger } from '../utils/logger';
 
@@ -15,6 +15,17 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     return saved ? parseInt(saved, 10) : 0;
   });
 
+  const [preferences, setPreferences] = useState<UserPreferences>(() => {
+    const saved = localStorage.getItem('ecoscan_preferences');
+    return saved ? JSON.parse(saved) : {
+      darkMode: false,
+      notifications: true,
+      emailNotifications: false,
+      name: 'Alex Johnson',
+      email: 'alex.eco@example.com'
+    };
+  });
+
   useEffect(() => {
     localStorage.setItem('ecoscan_history', JSON.stringify(history));
   }, [history]);
@@ -23,6 +34,17 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     localStorage.setItem('ecoscan_points', points.toString());
     logger.info(`Points updated to: ${points}`);
   }, [points]);
+
+  useEffect(() => {
+    localStorage.setItem('ecoscan_preferences', JSON.stringify(preferences));
+    // Apply dark mode to document
+    if (preferences.darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    logger.info('Preferences updated', preferences);
+  }, [preferences]);
 
   const addScan = (productId: string) => {
     logger.success(`Adding new scan: ${productId}`);
@@ -41,8 +63,26 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setPoints(0);
   };
 
+  const updatePreferences = (newPreferences: Partial<UserPreferences>) => {
+    logger.info('Updating preferences', newPreferences);
+    setPreferences(prev => ({ ...prev, ...newPreferences }));
+  };
+
+  const toggleDarkMode = () => {
+    logger.info('Toggling dark mode');
+    setPreferences(prev => ({ ...prev, darkMode: !prev.darkMode }));
+  };
+
   return (
-    <AppContext.Provider value={{ history, points, addScan, clearHistory }}>
+    <AppContext.Provider value={{ 
+      history, 
+      points, 
+      preferences,
+      addScan, 
+      clearHistory,
+      updatePreferences,
+      toggleDarkMode
+    }}>
       {children}
     </AppContext.Provider>
   );

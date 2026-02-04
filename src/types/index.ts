@@ -24,9 +24,20 @@ export interface Scan {
   timestamp: string;
 }
 
+export interface UserPreferences {
+  darkMode: boolean;
+  notifications: boolean;
+  emailNotifications: boolean;
+  name: string;
+  email: string;
+}
+
 export interface AppContextType {
   history: Scan[];
   points: number;
+  preferences: UserPreferences;
   addScan: (productId: string) => void;
   clearHistory: () => void;
+  updatePreferences: (preferences: Partial<UserPreferences>) => void;
+  toggleDarkMode: () => void;
 }
