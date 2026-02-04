@@ -1,16 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Html5QrcodeScanner } from 'html5-qrcode';
 import { useAppContext } from '../context/useAppContext';
-import { mockProducts } from '../data/mockProducts';
-import { X, Zap, Camera } from 'lucide-react';
+import { X, Camera } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { logger } from '../utils/logger';
 
 const BarcodeScanner: React.FC = () => {
   const navigate = useNavigate();
   const { addScan } = useAppContext();
-  const [error, setError] = useState<string | null>(null);
   const scannerRef = useRef<Html5QrcodeScanner | null>(null);
 
   useEffect(() => {
@@ -27,14 +25,9 @@ const BarcodeScanner: React.FC = () => {
 
     const onScanSuccess = (decodedText: string) => {
       logger.success(`Code matched = ${decodedText}`);
-      if (mockProducts[decodedText]) {
-        addScan(decodedText);
-        scannerRef.current?.clear();
-        navigate(`/product/${decodedText}`);
-      } else {
-        // For demo purposes, if not in mock, use a default one or show error
-        setError(`Product ${decodedText} not found in our database. Try scanning '8901234567890'`);
-      }
+      // Navigate directly - let the ProductDetail page handle "Loading" and "Not Found"
+      scannerRef.current?.clear();
+      navigate(`/product/${decodedText}`);
     };
 
     const onScanFailure = () => {
@@ -50,7 +43,7 @@ const BarcodeScanner: React.FC = () => {
 
   return (
     <div className="h-screen flex flex-col bg-black text-white">
-      <div className="absolute top-0 left-0 right-0 z-20 bg-gradient-to-b from-black/80 to-transparent p-4 flex justify-between items-center">
+      <div className="absolute top-0 left-0 right-0 z-20 bg-linear-to-b from-black/80 to-transparent p-4 flex justify-between items-center">
         <button onClick={() => navigate(-1)} className="p-2 bg-white/10 rounded-full backdrop-blur-md">
           <X size={24} />
         </button>
@@ -82,12 +75,7 @@ const BarcodeScanner: React.FC = () => {
           </p>
         </div>
 
-        {error && (
-          <div className="absolute bottom-24 left-4 right-4 bg-red-500/90 text-white p-4 rounded-2xl backdrop-blur-md flex items-start gap-3 animate-bounce">
-            <Zap className="shrink-0" />
-            <p className="text-sm font-medium">{error}</p>
-          </div>
-        )}
+
       </div>
 
       <div className="p-6 bg-zinc-900 border-t border-white/5 pb-24">

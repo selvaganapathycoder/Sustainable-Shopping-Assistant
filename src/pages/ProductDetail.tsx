@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { mockProducts, alternatives } from '../data/mockProducts';
 import Card from '../components/common/Card';
@@ -8,10 +8,39 @@ import { ChevronLeft, Share2, Leaf, Droplets, Factory, ShieldCheck, CheckCircle2
 import { motion } from 'framer-motion';
 import { getGradeColor, getImpactLabelClass } from '../utils/sustainability';
 
+import { fetchProduct } from '../services/productService';
+import { useAppContext } from '../context/useAppContext';
+import type { Product } from '../types';
+
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const product = mockProducts[id || ''];
+  const { addScan } = useAppContext();
+  const [product, setProduct] = useState<Product | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadProduct = async () => {
+      if (!id) return;
+      setLoading(true);
+      const data = await fetchProduct(id);
+      setProduct(data);
+      if (data) {
+        addScan(data.id);
+      }
+      setLoading(false);
+    };
+    loadProduct();
+  }, [id, addScan]);
+
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center h-screen bg-background dark:bg-gray-900">
+        <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4" />
+        <p className="text-gray-500 dark:text-gray-400 font-bold">Analyzing Product...</p>
+      </div>
+    );
+  }
 
   if (!product) {
     return (
