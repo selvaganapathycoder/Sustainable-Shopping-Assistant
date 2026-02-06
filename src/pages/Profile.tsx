@@ -13,7 +13,6 @@ import {
   HelpCircle, 
   ChevronRight, 
   Mail, 
-  User,
   Trash2,
   Check,
   X,
