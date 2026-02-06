@@ -95,7 +95,7 @@ npm run dev
 
 **Selvaganapathy**
 - **GitHub**: [@selvaganapathycoder](https://github.com/selvaganapathycoder)
-- **LinkedIn**: [Your LinkedIn Profile] (Update this!)
+- **LinkedIn**: [Selvaganapathy](https://www.linkedin.com/in/selva-ganapathy-developer)
 - **Live Demo**: [EcoScan Live](https://sustainable-shopping-assistant-jblfx4r0b.vercel.app)
 
 ---
