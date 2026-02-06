@@ -7,7 +7,7 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.18-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-7.3.1-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
-### 🚀 [Live Demo](https://sustainable-shopping-assistant-kppg8woi9.vercel.app) | 📦 [GitHub Repository](https://github.com/selvaganapathycoder/Sustainable-Shopping-Assistant)
+### 🚀 [Live Demo](https://sustainable-shopping-assistant-jblfx4r0b.vercel.app) | 📦 [GitHub Repository](https://github.com/selvaganapathycoder/Sustainable-Shopping-Assistant)
 
 **A professional, mobile-first web application that empowers users to make sustainable shopping choices using real-time product data.**
 
@@ -96,7 +96,7 @@ npm run dev
 **Selvaganapathy**
 - **GitHub**: [@selvaganapathycoder](https://github.com/selvaganapathycoder)
 - **LinkedIn**: [Your LinkedIn Profile] (Update this!)
-- **Live Demo**: [EcoScan Live](https://sustainable-shopping-assistant-kppg8woi9.vercel.app)
+- **Live Demo**: [EcoScan Live](https://sustainable-shopping-assistant-jblfx4r0b.vercel.app)
 
 ---
 
