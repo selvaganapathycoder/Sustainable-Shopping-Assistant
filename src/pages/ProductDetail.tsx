@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { mockProducts, alternatives } from '../data/mockProducts';
 import Card from '../components/common/Card';
 import Button from '../components/common/Button';
-import Badge from '../components/common/Badge';
+
 import { 
   ChevronLeft, 
   Share2, 
@@ -19,7 +19,7 @@ import {
   Award,
   Zap
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { getGradeColor, getImpactLabelClass } from '../utils/sustainability';
 
 import { fetchProduct } from '../services/productService';

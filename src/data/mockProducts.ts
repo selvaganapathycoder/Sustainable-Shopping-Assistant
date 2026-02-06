@@ -50,7 +50,7 @@ export const mockProducts: Record<string, Product> = {
       carbon: 'Low',
       plastic: 'Minimal',
       recyclability: 'High',
-      ethics: 'High'
+      ethics: 'Excellent'
     },
     details: {
       carbonValue: "0.4kg CO2e",
@@ -68,7 +68,7 @@ export const mockProducts: Record<string, Product> = {
     impact: {
       carbon: 'Medium',
       plastic: 'Moderate',
-      recyclability: 'Minimal',
+      recyclability: 'None',
       ethics: 'Fair'
     },
     details: {
