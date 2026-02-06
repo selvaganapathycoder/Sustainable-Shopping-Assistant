@@ -14,7 +14,7 @@ const History: React.FC = () => {
   const [search, setSearch] = useState('');
 
   const filteredHistory = history.filter(scan => {
-    const product = mockProducts[scan.productId];
+    const product = scan.product || mockProducts[scan.productId];
     return product?.name.toLowerCase().includes(search.toLowerCase()) || 
            product?.brand.toLowerCase().includes(search.toLowerCase());
   });
@@ -54,7 +54,7 @@ const History: React.FC = () => {
       {filteredHistory.length > 0 ? (
         <div className="space-y-4">
           {filteredHistory.map((scan) => {
-            const product = mockProducts[scan.productId];
+            const product = scan.product || mockProducts[scan.productId];
             if (!product) return null;
             const date = new Date(scan.timestamp).toLocaleDateString(undefined, {
               month: 'short',
@@ -65,7 +65,7 @@ const History: React.FC = () => {
               <Card 
                 key={scan.id} 
                 className="flex items-center gap-4 p-3 pr-4" 
-                onClick={() => navigate(`/product/${product.id}`)}
+                onClick={() => navigate(`/product/${scan.productId}`)}
               >
                 <div className="w-16 h-16 rounded-xl overflow-hidden bg-white dark:bg-gray-700 p-2 border border-gray-100 dark:border-gray-600 shrink-0">
                   <img src={product.image} alt={product.name} className="w-full h-full object-contain" />

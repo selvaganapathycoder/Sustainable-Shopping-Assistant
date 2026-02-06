@@ -26,7 +26,7 @@ const ProductDetail: React.FC = () => {
       const data = await fetchProduct(id);
       setProduct(data);
       if (data) {
-        addScan(data.id);
+        addScan(data.id, data);
       }
       setLoading(false);
     };
@@ -129,7 +129,7 @@ const ProductDetail: React.FC = () => {
               <Factory size={18} />
               <span className="text-xs font-bold uppercase tracking-tight">Carbon</span>
             </div>
-            <p className={`text-sm ${getImpactLabelClass(product.impact.carbon)}`}>{product.impact.carbon}</p>
+            <p className={`text-sm ${getImpactLabelClass(product.impact.carbon, 'carbon')}`}>{product.impact.carbon}</p>
             <p className="text-[10px] text-gray-400 dark:text-gray-500 font-medium">{product.details.carbonValue}</p>
           </Card>
           
@@ -138,7 +138,7 @@ const ProductDetail: React.FC = () => {
               <Droplets size={18} />
               <span className="text-xs font-bold uppercase tracking-tight">Plastic</span>
             </div>
-            <p className={`text-sm ${getImpactLabelClass(product.impact.plastic)}`}>{product.impact.plastic}</p>
+            <p className={`text-sm ${getImpactLabelClass(product.impact.plastic, 'plastic')}`}>{product.impact.plastic}</p>
             <p className="text-[10px] text-gray-400 dark:text-gray-500 font-medium">{product.details.plasticValue}</p>
           </Card>
 
@@ -147,7 +147,7 @@ const ProductDetail: React.FC = () => {
               <Leaf size={18} />
               <span className="text-xs font-bold uppercase tracking-tight">Recycling</span>
             </div>
-            <p className={`text-sm ${getImpactLabelClass(product.impact.recyclability)}`}>{product.impact.recyclability}</p>
+            <p className={`text-sm ${getImpactLabelClass(product.impact.recyclability, 'recyclability')}`}>{product.impact.recyclability}</p>
           </Card>
 
           <Card className="flex flex-col gap-2 p-4">
@@ -155,7 +155,7 @@ const ProductDetail: React.FC = () => {
               <ShieldCheck size={18} />
               <span className="text-xs font-bold uppercase tracking-tight">Ethics</span>
             </div>
-            <p className={`text-sm ${getImpactLabelClass(product.impact.ethics)}`}>{product.impact.ethics}</p>
+            <p className={`text-sm ${getImpactLabelClass(product.impact.ethics, 'ethics')}`}>{product.impact.ethics}</p>
             <p className="text-[10px] text-gray-400 dark:text-gray-500 font-medium">{product.details.ethicsValue}</p>
           </Card>
         </div>

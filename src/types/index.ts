@@ -22,6 +22,13 @@ export interface Scan {
   id: string;
   productId: string;
   timestamp: string;
+  product?: {
+    name: string;
+    brand: string;
+    image: string;
+    grade: 'A' | 'B' | 'C' | 'D' | 'E';
+    score: number;
+  };
 }
 
 export interface UserPreferences {
@@ -36,7 +43,7 @@ export interface AppContextType {
   history: Scan[];
   points: number;
   preferences: UserPreferences;
-  addScan: (productId: string) => void;
+  addScan: (productId: string, productData?: Product) => void;
   clearHistory: () => void;
   updatePreferences: (preferences: Partial<UserPreferences>) => void;
   toggleDarkMode: () => void;

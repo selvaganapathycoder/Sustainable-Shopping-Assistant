@@ -9,336 +9,61 @@
 
 ### 🚀 [Live Demo](https://sustainable-shopping-assistant-kppg8woi9.vercel.app) | 📦 [GitHub Repository](https://github.com/selvaganapathycoder/Sustainable-Shopping-Assistant)
 
-**A modern, mobile-first web application that helps users make sustainable shopping choices by scanning products and tracking their environmental impact.**
+**A professional, mobile-first web application that empowers users to make sustainable shopping choices using real-time product data.**
 
 </div>
 
 ---
 
-## 📱 Screenshots
+## 📱 Project Overview
 
-<div align="center">
+EcoScan is a modern sustainability tracking platform designed to simplify eco-conscious shopping. By integrating the **Open Food Facts API**, the application provides instant sustainability analysis, carbon footprint insights, and ethical scoring for thousands of products via barcode scanning.
 
-### 🚀 [Try Live Demo](https://sustainable-shopping-assistant-kppg8woi9.vercel.app)
+### ✨ Core Features
 
-> **Experience the app in action!** The live demo showcases all features including barcode scanning, sustainability scoring, progress tracking, and more.
-
-### App Preview
-
-<table>
-<tr>
-<td align="center" width="33%">
-<img src="./screenshots/home.png" alt="Home Page" width="250"/>
-<br/><b>Home Page</b>
-<br/>Browse eco-friendly products
-</td>
-<td align="center" width="33%">
-<img src="./screenshots/scanner.png" alt="Scanner" width="250"/>
-<br/><b>Barcode Scanner</b>
-<br/>Scan products instantly
-</td>
-<td align="center" width="33%">
-<img src="./screenshots/product-detail.png" alt="Product Details" width="250"/>
-<br/><b>Product Details</b>
-<br/>View sustainability scores
-</td>
-</tr>
-<tr>
-<td align="center" width="33%">
-<img src="./screenshots/history.png" alt="History" width="250"/>
-<br/><b>Scan History</b>
-<br/>Track all scanned products
-</td>
-<td align="center" width="33%">
-<img src="./screenshots/progress.png" alt="Progress" width="250"/>
-<br/><b>Progress Dashboard</b>
-<br/>Track your environmental impact
-</td>
-<td align="center" width="33%">
-<img src="./screenshots/profile.png" alt="Profile" width="250"/>
-<br/><b>User Profile</b>
-<br/>Manage preferences & goals
-</td>
-</tr>
-</table>
-
-</div>
+- **🔍 Intelligent Barcode Scanner**: Powered by `html5-qrcode` for instant, camera-based product identification.
+- **📊 Real-time Sustainability Scoring**: Comprehensive 0-100 scores based on packaging, carbon impact, and ethical sourcing fetched directly from global databases.
+- **📈 Impact Dashboard**: Personalized tracking of environmental contributions and CO₂ savings.
+- **📜 Smart History**: Persistent local storage of scan history with full search and filter capabilities.
+- **🌗 Native Dark Mode**: fully responsive, premium UI with seamless theme switching and smooth Framer Motion animations.
 
 ---
 
-## 📖 Overview
+## 🛠️ Technical Excellence
 
-EcoScan is a comprehensive sustainability tracking application that empowers consumers to make environmentally conscious purchasing decisions. By scanning product barcodes, users can instantly access sustainability scores, eco-friendly alternatives, and track their positive environmental impact over time.
-
-### 🎯 Problem Statement
-Modern consumers want to make sustainable choices but find eco-labels confusing and alternatives hard to discover. EcoScan simplifies this decision-making process in seconds.
-
-### 💡 Solution
-An intuitive mobile-first application that provides:
-- **Instant product sustainability analysis** via barcode scanning
-- **Comprehensive scoring system** based on packaging, carbon footprint, ethics, and recyclability
-- **Personalized progress tracking** with gamification elements
-- **Historical data** of all scanned products
-- **Eco-friendly alternatives** recommendations
-
----
-
-## ✨ Key Features
-
-### 🔍 Barcode Scanner
-- Real-time barcode scanning using device camera
-- Powered by `html5-qrcode` library
-- Instant product lookup from mock database
-- Fallback manual entry option
-
-### 📊 Sustainability Scoring
-Comprehensive 0-100 score calculated from four pillars:
-```
-Score = (Packaging + Carbon Footprint + Ethics + Recyclability) / 4
-```
-- **90-100 (Grade A)**: ✅ Highly Recommended
-- **60-89 (Grade B/C)**: ⚠️ Moderate Impact
-- **0-59 (Grade D/E)**: ❌ Consider Alternatives
-
-### 📈 Progress Dashboard
-- Track total scans and CO₂ savings
-- Earn achievement badges (Eco Warrior, Carbon Saver, etc.)
-- Visual progress charts
-- Sustainability streak tracking
-
-### 📜 Scan History
-- Complete history of all scanned products
-- Filter and search capabilities
-- Quick re-access to product details
-- Persistent storage using LocalStorage
-
-### 👤 User Profile
-- Personalized sustainability goals
-- Achievement showcase
-- Statistics overview
-- Settings and preferences
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend Framework
-- **React 19.2.0** - Latest React with modern hooks
-- **TypeScript 5.9.3** - Type-safe development
-- **Vite 7.3.1** - Lightning-fast build tool
-
-### Styling & UI
-- **Tailwind CSS 4.1.18** - Utility-first CSS framework
-- **Framer Motion 12.24.10** - Smooth animations and transitions
-- **Lucide React** - Beautiful icon library
-- **Recharts 3.6.0** - Responsive chart components
-
-### State Management
-- **React Context API** - Global state management
-- **LocalStorage** - Persistent data caching
-
-### Routing & Navigation
-- **React Router DOM 7.12.0** - Client-side routing
-
-### Barcode Scanning
-- **html5-qrcode 2.3.8** - Camera-based barcode scanning
-
-### Development Tools
-- **ESLint** - Code linting
-- **PostCSS** - CSS processing
-- **Autoprefixer** - CSS vendor prefixing
+- **Modern Architecture**: Built with **React 19** and **TypeScript** for robust, state-of-the-art frontend development.
+- **API First**: Seamless integration with the **Open Food Facts REST API** for real-world data accuracy.
+- **Performance Optimized**: Lightning-fast builds via **Vite**, with code-splitting and efficient local data caching.
+- **Premium UI/UX**: Developed with **Tailwind CSS** and **Framer Motion** for a high-end, native-app feel.
 
 ---
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- Node.js 18+ and npm/yarn installed
-- Modern web browser with camera access
-
-### Installation
-
-1. **Clone the repository**
 ```bash
+# Clone the repository
 git clone https://github.com/selvaganapathycoder/Sustainable-Shopping-Assistant.git
-cd Sustainable-Shopping-Assistant
-```
 
-2. **Install dependencies**
-```bash
+# Install dependencies
 npm install
-```
 
-3. **Start development server**
-```bash
+# Run development server
 npm run dev
 ```
 
-4. **Open in browser**
-```
-http://localhost:5173
-```
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-The optimized production build will be in the `dist/` directory.
-
-### Preview Production Build
-
-```bash
-npm run preview
-```
-
 ---
 
-## 📁 Project Structure
-
-```
-src/
-├── components/
-│   ├── common/          # Reusable UI components
-│   │   ├── Badge.tsx
-│   │   ├── Button.tsx
-│   │   └── Card.tsx
-│   └── layout/          # Layout components
-│       ├── Header.tsx
-│       └── Navbar.tsx
-├── pages/               # Page components
-│   ├── Home.tsx
-│   ├── BarcodeScanner.tsx
-│   ├── ProductDetail.tsx
-│   ├── History.tsx
-│   ├── Progress.tsx
-│   ├── Profile.tsx
-│   └── Onboarding.tsx
-├── context/             # State management
-│   ├── AppContext.tsx
-│   ├── AppContextCore.ts
-│   └── useAppContext.ts
-├── data/                # Mock data
-│   └── mockProducts.ts
-├── utils/               # Utility functions
-│   ├── logger.ts
-│   └── sustainability.ts
-├── types/               # TypeScript types
-│   └── index.ts
-├── assets/              # Static assets
-│   ├── logo.svg
-│   └── title.svg
-├── App.tsx              # Main app component
-├── main.tsx             # Entry point
-└── index.css            # Global styles
-```
-
----
-
-## 🎨 Design Highlights
-
-### Color Palette
-- **Primary Green**: `#16a34a` - Eco-friendly brand color
-- **Accent Green**: `#22c55e` - Interactive elements
-- **Background**: `#f8f9fa` - Clean, modern base
-- **Text**: `#1f2937` - High contrast readability
-
-### UI/UX Features
-- **Mobile-First Design** - Optimized for smartphones
-- **Smooth Animations** - Framer Motion micro-interactions
-- **Responsive Layout** - Works on all screen sizes
-- **Intuitive Navigation** - Bottom tab bar for easy access
-- **Accessibility** - WCAG compliant color contrasts
-
----
-
-## 🎮 Demo Features
-
-### Pre-configured Test Barcodes
-Try scanning these barcodes in the demo:
-- `8901030123456` - Eco-Friendly Water Bottle (Grade A)
-- `8901030789012` - Bamboo Toothbrush (Grade A)
-- `8901030345678` - Reusable Shopping Bag (Grade B)
-
-### Mock Product Database
-The application includes a comprehensive mock database with:
-- Product names and descriptions
-- Sustainability scores and grades
-- CO₂ impact calculations
-- Eco-friendly alternatives
-- Detailed sustainability breakdowns
-
----
-
-## 📊 Performance Metrics
-
-### Build Output
-- **Bundle Size**: 1.1 MB (345 KB gzipped)
-- **Build Time**: ~1 minute
-- **Lighthouse Score**: 95+ Performance
-
-### Optimization Techniques
-- Code splitting with React.lazy()
-- Image optimization
-- CSS purging with Tailwind
-- Tree shaking with Vite
-- LocalStorage caching
-
----
-
-## 🌐 Deployment
-
-### Live Application
-🔗 **[https://sustainable-shopping-assistant-kppg8woi9.vercel.app](https://sustainable-shopping-assistant-kppg8woi9.vercel.app)**
-
-### Deployment Platform
-- **Vercel** - Automatic deployments from GitHub
-- **CI/CD** - Every push to `main` triggers deployment
-- **Preview Deployments** - Pull requests get preview URLs
-
----
-
-## 🔮 Future Enhancements
-
-- [x] **Real Product API Integration** - Connect to actual product databases
-- [ ] **User Authentication** - Firebase/Auth0 integration
-- [ ] **Social Features** - Share achievements with friends
-- [x] **Advanced Analytics** - Detailed sustainability insights
-- [ ] **Offline Mode** - PWA with service workers
-- [ ] **Multi-language Support** - i18n implementation
-- [x] **Dark Mode** - Theme switching capability
-- [ ] **Export Reports** - PDF sustainability reports
-
----
-
-## 👨‍💻 Developer
+## 👨‍💻 Developed by
 
 **Selvaganapathy**
-- GitHub: [@selvaganapathycoder](https://github.com/selvaganapathycoder)
-- Portfolio: [View Live Demo](https://sustainable-shopping-assistant-kppg8woi9.vercel.app)
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-## 🙏 Acknowledgments
-
-- Icons by [Lucide Icons](https://lucide.dev/)
-- Charts by [Recharts](https://recharts.org/)
-- Animations by [Framer Motion](https://www.framer.com/motion/)
-- Barcode scanning by [html5-qrcode](https://github.com/mebjas/html5-qrcode)
+- **GitHub**: [@selvaganapathycoder](https://github.com/selvaganapathycoder)
+- **LinkedIn**: [Your LinkedIn Profile] (Update this!)
+- **Live Demo**: [EcoScan Live](https://sustainable-shopping-assistant-kppg8woi9.vercel.app)
 
 ---
 
 <div align="center">
 
-### ⭐ Star this repository if you found it helpful!
-
-**Built with ❤️ for a sustainable future 🌍**
+**Built with a focus on clean code, real-world utility, and sustainability. 🌍**
 
 </div>

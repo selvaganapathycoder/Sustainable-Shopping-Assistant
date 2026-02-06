@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import type { Scan, UserPreferences } from '../types';
+import type { Scan, UserPreferences, Product } from '../types';
 import { AppContext } from './AppContextCore';
 import { logger } from '../utils/logger';
 
@@ -46,14 +46,25 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     logger.info('Preferences updated', preferences);
   }, [preferences]);
 
-  const addScan = (productId: string) => {
+  const addScan = (productId: string, productData?: Product) => {
     logger.success(`Adding new scan: ${productId}`);
     const newScan: Scan = {
       id: Math.random().toString(36).substr(2, 9),
       productId,
       timestamp: new Date().toISOString(),
+      product: productData ? {
+        name: productData.name,
+        brand: productData.brand,
+        image: productData.image,
+        grade: productData.grade,
+        score: productData.score
+      } : undefined
     };
-    setHistory(prev => [newScan, ...prev]);
+    setHistory(prev => {
+      // Avoid duplicate recent scans of same product
+      if (prev.length > 0 && prev[0].productId === productId) return prev;
+      return [newScan, ...prev];
+    });
     setPoints(prev => prev + 10); // Simple point reward
   };
 

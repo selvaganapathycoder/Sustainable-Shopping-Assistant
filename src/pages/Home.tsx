@@ -87,12 +87,12 @@ const Home: React.FC = () => {
         {history.length > 0 ? (
           <div className="space-y-4">
             {history.slice(0, 3).map((scan: ScanType) => {
-              const product = mockProducts[scan.productId];
+              const product = scan.product || mockProducts[scan.productId];
               if (!product) return null;
               return (
-                <Card key={scan.id} className="flex items-center gap-4 p-3 pr-4" onClick={() => navigate(`/product/${product.id}`)}>
+                <Card key={scan.id} className="flex items-center gap-4 p-3 pr-4" onClick={() => navigate(`/product/${scan.productId}`)}>
                   <div className="w-16 h-16 rounded-xl overflow-hidden bg-gray-100 dark:bg-gray-700">
-                    <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+                    <img src={product.image} alt={product.name} className="w-full h-full object-contain p-2" />
                   </div>
                   <div className="flex-1">
                     <h4 className="font-bold text-sm line-clamp-1 dark:text-white">{product.name}</h4>

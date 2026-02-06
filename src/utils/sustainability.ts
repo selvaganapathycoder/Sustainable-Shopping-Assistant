@@ -19,11 +19,22 @@ export const getGradeColor = (grade: EcoGrade): string => {
   }
 };
 
-export const getImpactLabelClass = (value: string): string => {
-  const lowImpact = ['Low', 'Minimal', 'High', 'Excellent'];
-  const midImpact = ['Medium', 'Moderate', 'Partial', 'Fair'];
+export const getImpactLabelClass = (value: string, type?: 'carbon' | 'plastic' | 'recyclability' | 'ethics'): string => {
+  const normalizedValue = value.toLowerCase();
   
-  if (lowImpact.includes(value)) return 'text-green-600 font-semibold';
-  if (midImpact.includes(value)) return 'text-yellow-600 font-semibold';
+  if (['low', 'minimal', 'excellent'].includes(normalizedValue)) {
+     return 'text-green-600 font-semibold';
+  }
+  
+  if (['high'].includes(normalizedValue)) {
+     // High is good for recyclability/ethics, bad for carbon/plastic
+     if (type === 'recyclability' || type === 'ethics') return 'text-green-600 font-semibold';
+     return 'text-red-600 font-semibold';
+  }
+
+  if (['medium', 'moderate', 'partial', 'fair'].includes(normalizedValue)) {
+    return 'text-yellow-600 font-semibold';
+  }
+  
   return 'text-red-600 font-semibold';
 };
