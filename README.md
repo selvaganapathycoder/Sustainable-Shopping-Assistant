@@ -29,6 +29,44 @@ EcoScan is a modern sustainability tracking platform designed to simplify eco-co
 
 ---
 
+## 📸 Project Screenshots
+
+<div align="center">
+  <table style="width: 100%; border-collapse: collapse; border: none;">
+    <tr>
+      <td align="center" style="width: 33.33%; border: none;">
+        <img src="./screenshots/home.png" width="200" alt="Home Screen"/><br/>
+        <b>🏠 Home Dashboard</b>
+      </td>
+      <td align="center" style="width: 33.33%; border: none;">
+        <img src="./screenshots/scanner.png" width="200" alt="Barcode Scanner"/><br/>
+        <b>🔍 Smart Scanner</b>
+      </td>
+      <td align="center" style="width: 33.33%; border: none;">
+        <img src="./screenshots/product-detail.png" width="200" alt="Product Detail"/><br/>
+        <b>📊 Product Insights</b>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="width: 33.33%; border: none;">
+        <img src="./screenshots/history.png" width="200" alt="Scan History"/><br/>
+        <b>📜 Scan History</b>
+      </td>
+      <td align="center" style="width: 33.33%; border: none;">
+        <img src="./screenshots/progress.png" width="200" alt="Impact Progress"/><br/>
+        <b>📈 Impact Tracking</b>
+      </td>
+      <td align="center" style="width: 33.33%; border: none;">
+        <img src="./screenshots/profile.png" width="200" alt="User Profile"/><br/>
+        <b>👤 User Profile</b>
+      </td>
+    </tr>
+  </table>
+</div>
+
+---
+
+
 ## 🛠️ Technical Excellence
 
 - **Modern Architecture**: Built with **React 19** and **TypeScript** for robust, state-of-the-art frontend development.

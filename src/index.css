@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-primary: #2ECC71;
   --color-secondary: #27AE60;
@@ -16,7 +18,17 @@
 :root {
   background-color: var(--color-background);
   color: var(--color-text);
+  --background-alt: #FFFFFF;
 }
+
+.dark {
+  --color-background: #0F172A;
+  --color-text: #F8FAFC;
+  --background-alt: #1E293B;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
 
 body {
   margin: 0;

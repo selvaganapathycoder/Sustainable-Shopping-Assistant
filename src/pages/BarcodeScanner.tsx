@@ -16,7 +16,14 @@ const BarcodeScanner: React.FC = () => {
       "reader",
       { 
         fps: 10, 
-        qrbox: { width: 250, height: 150 },
+        qrbox: (viewfinderWidth, viewfinderHeight) => {
+          const minEdge = Math.min(viewfinderWidth, viewfinderHeight);
+          const qrboxSize = Math.floor(minEdge * 0.7);
+          return {
+            width: qrboxSize,
+            height: Math.floor(qrboxSize * 0.6)
+          };
+        },
         rememberLastUsedCamera: true,
         aspectRatio: 1.0
       },
@@ -59,18 +66,18 @@ const BarcodeScanner: React.FC = () => {
         
         {/* Mock UI overlay for scanner since real camera might not work in all environments */}
         <div className="absolute inset-0 pointer-events-none flex flex-col items-center justify-center">
-          <div className="w-64 h-40 border-2 border-primary rounded-2xl relative shadow-[0_0_0_1000px_rgba(0,0,0,0.5)]">
+          <div className="w-[70vw] max-w-[280px] aspect-[1.6/1] border-2 border-primary rounded-2xl relative shadow-[0_0_0_1000px_rgba(0,0,0,0.5)]">
             <motion.div 
               animate={{ top: ['0%', '100%', '0%'] }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
               className="absolute left-0 right-0 h-0.5 bg-primary shadow-[0_0_10px_#2ECC71]"
             />
-            <div className="absolute top-0 left-0 w-4 h-4 border-t-4 border-l-4 border-primary rounded-tl-lg" />
-            <div className="absolute top-0 right-0 w-4 h-4 border-t-4 border-r-4 border-primary rounded-tr-lg" />
-            <div className="absolute bottom-0 left-0 w-4 h-4 border-b-4 border-l-4 border-primary rounded-bl-lg" />
-            <div className="absolute bottom-0 right-0 w-4 h-4 border-b-4 border-r-4 border-primary rounded-br-lg" />
+            <div className="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-primary rounded-tl-lg" />
+            <div className="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-primary rounded-tr-lg" />
+            <div className="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-primary rounded-bl-lg" />
+            <div className="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-primary rounded-br-lg" />
           </div>
-          <p className="mt-8 text-white/80 text-sm bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm">
+          <p className="mt-8 text-white/80 text-xs font-bold bg-black/40 px-6 py-2 rounded-full backdrop-blur-sm border border-white/10 uppercase tracking-wider">
             Align barcode inside the frame
           </p>
         </div>

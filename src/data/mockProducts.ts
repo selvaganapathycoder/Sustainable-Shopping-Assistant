@@ -5,7 +5,7 @@ export const mockProducts: Record<string, Product> = {
     id: "8901234567890",
     name: "Eco-Friendly Bamboo Toothbrush",
     brand: "GreenLeaf",
-    image: "/assets/products/toothbrush.png",
+    image: "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&q=80&w=800",
     score: 92,
     grade: 'A',
     impact: {
@@ -24,7 +24,7 @@ export const mockProducts: Record<string, Product> = {
     id: "8901111222333",
     name: "Classic Plastic Bottled Water",
     brand: "AquaPure",
-    image: "/assets/products/water_bottle.png",
+    image: "https://images.unsplash.com/photo-1616031037011-087000171abe?auto=format&fit=crop&q=80&w=800",
     score: 25,
     grade: 'E',
     impact: {
@@ -38,9 +38,49 @@ export const mockProducts: Record<string, Product> = {
       plasticValue: "100% single-use plastic",
       ethicsValue: "Standard corporate sourcing"
     }
+  },
+  "7310521054107": {
+    id: "7310521054107",
+    name: "Oat Milk (Barista Edition)",
+    brand: "Oatly",
+    image: "https://images.unsplash.com/photo-1615485427187-5757917a26f3?auto=format&fit=crop&q=80&w=800",
+    score: 88,
+    grade: 'A',
+    impact: {
+      carbon: 'Low',
+      plastic: 'Minimal',
+      recyclability: 'High',
+      ethics: 'High'
+    },
+    details: {
+      carbonValue: "0.4kg CO2e",
+      plasticValue: "Recyclable carton",
+      ethicsValue: "Transparent supply chain"
+    }
+  },
+  "4008400404127": {
+    id: "4008400404127",
+    name: "Chocolate Bar",
+    brand: "Kinder",
+    image: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&q=80&w=800",
+    score: 42,
+    grade: 'C',
+    impact: {
+      carbon: 'Medium',
+      plastic: 'Moderate',
+      recyclability: 'Minimal',
+      ethics: 'Fair'
+    },
+    details: {
+      carbonValue: "0.8kg CO2e",
+      plasticValue: "Non-recyclable wrapper",
+      ethicsValue: "Palm oil concerns"
+    }
   }
 };
 
 export const alternatives: Record<string, string[]> = {
-  "8901111222333": ["8901234567890"] // Mock alternative for water bottle
+  "8901111222333": ["8901234567890"],
+  "4008400404127": ["7310521054107"] // Just for mock variety
 };
+
