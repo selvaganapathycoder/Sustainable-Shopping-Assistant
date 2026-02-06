@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import type { Scan, UserPreferences, Product } from '../types';
 import { AppContext } from './AppContextCore';
 import { logger } from '../utils/logger';
@@ -46,7 +46,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     logger.info('Preferences updated', preferences);
   }, [preferences]);
 
-  const addScan = (productId: string, productData?: Product) => {
+  const addScan = useCallback((productId: string, productData?: Product) => {
     logger.success(`Adding new scan: ${productId}`);
     const newScan: Scan = {
       id: Math.random().toString(36).substr(2, 9),
@@ -62,27 +62,35 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     };
     setHistory(prev => {
       // Avoid duplicate recent scans of same product
-      if (prev.length > 0 && prev[0].productId === productId) return prev;
+      if (prev.length > 0 && prev[0].productId === productId) {
+        // If we now have product data but the existing entry doesn't, we should update it
+        if (productData && !prev[0].product) {
+          const updatedHistory = [...prev];
+          updatedHistory[0] = { ...updatedHistory[0], product: newScan.product };
+          return updatedHistory;
+        }
+        return prev;
+      }
       return [newScan, ...prev];
     });
     setPoints(prev => prev + 10); // Simple point reward
-  };
+  }, []);
 
-  const clearHistory = () => {
+  const clearHistory = useCallback(() => {
     logger.warn('Clearing scanning history and points');
     setHistory([]);
     setPoints(0);
-  };
+  }, []);
 
-  const updatePreferences = (newPreferences: Partial<UserPreferences>) => {
+  const updatePreferences = useCallback((newPreferences: Partial<UserPreferences>) => {
     logger.info('Updating preferences', newPreferences);
     setPreferences(prev => ({ ...prev, ...newPreferences }));
-  };
+  }, []);
 
-  const toggleDarkMode = () => {
+  const toggleDarkMode = useCallback(() => {
     logger.info('Toggling dark mode');
     setPreferences(prev => ({ ...prev, darkMode: !prev.darkMode }));
-  };
+  }, []);
 
   return (
     <AppContext.Provider value={{ 

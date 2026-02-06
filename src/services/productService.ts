@@ -1,5 +1,6 @@
 import type { Product } from '../types';
 import { mockProducts } from '../data/mockProducts';
+import { logger } from '../utils/logger';
 
 const API_BASE_URL = 'https://world.openfoodfacts.org/api/v0/product';
 
@@ -68,22 +69,35 @@ const mapOpenFoodFactsToProduct = (id: string, data: OpenFoodFactsProduct): Prod
 };
 
 export const fetchProduct = async (id: string): Promise<Product | null> => {
+  logger.info(`Fetching product with ID: ${id}`);
+  
   try {
     // 1. Try fetching from API
+    logger.info(`Attempting API lookup at: ${API_BASE_URL}/${id}.json`);
     const response = await fetch(`${API_BASE_URL}/${id}.json`);
-    const data: OpenFoodFactsResponse = await response.json();
+    
+    if (!response.ok) {
+      logger.warn(`API responded with status: ${response.status}`);
+    } else {
+      const data: OpenFoodFactsResponse = await response.json();
+      logger.info(`API response status: ${data.status}`);
 
-    if (data.status === 1 && data.product) {
-       return mapOpenFoodFactsToProduct(id, data.product);
+      if (data.status === 1 && data.product) {
+        logger.success(`Product found in API: ${data.product.product_name}`);
+        return mapOpenFoodFactsToProduct(id, data.product);
+      }
     }
-  } catch {
-    console.warn(`API lookup failed for ${id}, falling back to mock data.`);
+  } catch (error) {
+    logger.error(`API lookup failed for ${id}`, error);
   }
 
   // 2. Fallback to Mock Data
+  logger.info(`Checking mock data for ID: ${id}`);
   if (mockProducts[id]) {
+    logger.success(`Product found in mock data: ${mockProducts[id].name}`);
     return mockProducts[id];
   }
 
+  logger.warn(`Product not found anywhere for ID: ${id}`);
   return null;
 };
